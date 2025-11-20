@@ -17,26 +17,25 @@
 
 <div class="color-transition-bottom"></div>
 
-<section id="menu" class="py-5 parallax"
-style="background-image:url('https://images.unsplash.com/photo-1600891964909-8bdfc3e1b1b0');">
-    <div class="container text-center text-dark bg-light bg-opacity-75 rounded p-4">
-        <h2 class="fw-bold mb-4">Our Menu</h2>
+<section id="company-info" class="py-5">
+    <div class="container text-center">
+
         <div class="row g-4">
             <?php foreach($infoData as $item): ?>
             <div class="col-md-4">
-                <div class="card menu-card shadow-sm">
-                    <img src="<?= $item['img']; ?>" class="card-img-top">
-                    <div class="card-body">
-                        <h5><?= $item['title'] ?></h5>
-                        <p><?= $item['summary'] ?></p>
-                        <p class="fw-bold text-danger"><?= $item['price'] ?></p>
-                        <a href="detail.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-sm">Details</a>
+                <a href="<?= $item['link']; ?>" style="text-decoration:none; color:inherit;">
+                    <div class="card shadow-sm h-100 info-card">
+                        <img src="<?= $item['img']; ?>" class="card-img-top"
+                             style="height:240px; object-fit:cover;">
                     </div>
-                </div>
+                </a>
             </div>
             <?php endforeach; ?>
         </div>
+
     </div>
 </section>
+
+
 
 <?php include("includes/footer.php"); ?>

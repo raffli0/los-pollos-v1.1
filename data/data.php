@@ -1,5 +1,5 @@
 <?php
-$infoData = [
+$menuData = [
     [
         "id" => 1,
         "title" => "Crispy Fried Chicken",
@@ -25,4 +25,23 @@ $infoData = [
         "img" => "https://popmenucloud.com/cdn-cgi/image/width=1920,height=1920,format=auto,fit=scale-down/ugsiabvj/898f481b-701b-4c4b-b322-183d365294c7.jpg"
     ],
 ];
+
+$infoData = [
+    [
+        "link" => "history.php",
+        "title" => "Our History",
+        "img" => "http://www.lphishiring.com/assets/tile-history.jpg"
+    ],
+    [
+        "link" => "jobs.php",
+        "title" => "Job Listings",
+        "img" => "http://www.lphishiring.com/assets/tile-jobs.jpg"
+    ],
+    [
+        "link" => "culture.php",
+        "title" => "Our Culture & Values",
+        "img" => "http://www.lphishiring.com/assets/tile-culture.jpg"
+    ],
+];
+
 ?>

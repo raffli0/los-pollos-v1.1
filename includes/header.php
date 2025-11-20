@@ -18,9 +18,9 @@
         </button>
         <div id="navbarNav" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a href="index.php#menu" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="index.php#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="index.php#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.php#company-info" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
             </ul>
         </div>
     </div>

@@ -9,6 +9,7 @@
         <p id="err" class="text-danger small d-none">Email atau Password salah</p>
         <button class="btn btn-warning w-100" type="submit">Login</button>
     </form>
+    <p class="text-center mt-3">Don't have an account? <a href="register.php">Register here</a></p>
 </div>
 </div>
 

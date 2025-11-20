@@ -1,7 +1,7 @@
 <?php include("includes/header.php"); ?>
 
 <script>
-// Cek login di browser (JavaScript)
+// jika user belum login → arahkan kembali ke halaman utama
 if(!sessionStorage.getItem("login")){
     alert("Access Denied!");
     window.location.href = "login.php";
