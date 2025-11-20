@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); ?>
+<?php $page = "home"; include("includes/header.php"); ?>
 <?php include("data/data.php"); ?>
 
 <section class="hero">
@@ -10,7 +10,7 @@
 <div class="color-transition"></div>
 
 <div class="gif-cta text-center my-0">
-    <a href="menu.php" class="gif-link">
+    <a href="jobs.php" class="gif-link">
         <img src="assets/img/los-pollos-hermanos-ad.gif" class="img-fluid gif-hiring">
     </a>
 </div>
