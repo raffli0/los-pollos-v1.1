@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); ?>
+<?php  include("includes/header.php"); ?>
 <?php include("data/data.php"); ?>
 <?php $heroBg = "assets/img/lp-job.png"; ?>
 
@@ -87,7 +87,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-secondary text-light mb-3">Full Time</span>
                         <p>Ensure restaurant cleanliness, equipment maintenance, and support facility needs.</p>
-                        <a href="#" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
+                        <a href="contact.php" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
                     </div>
                 </div>
             </div>
