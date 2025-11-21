@@ -15,11 +15,10 @@ if (!empty($_POST["id"])) {
 
         $sql = 'UPDATE `applicants`
                 SET `fullname` = ?,
-                `nama_belakang`
                 `email` = ?,
                 `phone` = ?,
                 `position` = ?,
-                `time_stamp` = ?,
+                `applied_at` = ?
                 WHERE id = ?';
 
         $qonnect = $database_connection->prepare($sql);
