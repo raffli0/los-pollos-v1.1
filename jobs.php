@@ -35,7 +35,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-warning text-dark mb-3">Full Time</span>
                         <p>Responsible for food preparation, maintaining cleanliness, and supporting daily kitchen operations.</p>
-                        <a href="#" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-info text-dark mb-3">Part Time</span>
                         <p>Handle customer transactions, service excellence, and maintain smooth front-desk operations.</p>
-                        <a href="#" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-success text-light mb-3">Contract</span>
                         <p>Deliver orders quickly and safely using company vehicle. Good driving record required.</p>
-                        <a href="#" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-danger text-light mb-3">Full Time</span>
                         <p>Lead store operations, manage staff, and maintain customer satisfaction to brand standards.</p>
-                        <a href="#" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-secondary text-light mb-3">Full Time</span>
                         <p>Ensure restaurant cleanliness, equipment maintenance, and support facility needs.</p>
-                        <a href="contact.php" class="btn btn-danger fw-bold w-100" style="background-color: #9f1000;">Apply Now</a>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -96,6 +96,26 @@
 
     </div>
 </section>
+
+<script>
+document.querySelectorAll('.apply-btn').forEach(btn => {
+    btn.addEventListener('click', function(){
+
+        let logged = sessionStorage.getItem("login");
+
+        if(!logged){
+            alert("You must login before applying!");
+            window.location.href = "login.php";
+            return;
+        }
+
+        // Jika sudah login → arahkan ke halaman apply
+        let position = this.getAttribute('data-position');
+        window.location.href = "apply.php?position=" + encodeURIComponent(position);
+
+    });
+});
+</script>
 
 
 <?php include("includes/footer.php"); ?>
