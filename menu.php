@@ -1,13 +1,13 @@
 <?php $page = "menu"; include("includes/header.php"); ?>
 <?php include("data/data.php"); ?>
 
-<script>
-// jika user belum login → arahkan kembali ke halaman utama
-if(!sessionStorage.getItem("login")){
-    alert("Access Denied!");
-    window.location.href = "login.php";
+<?php
+// jika user belum login → arahkan kembali ke halaman login
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
 }
-</script>
+?>
 
 <section class="hero">
     <div class="hero-content">
@@ -48,14 +48,8 @@ if(!sessionStorage.getItem("login")){
     <h2>Welcome to Dashboard</h2>
     <p>Here you can manage menu / company info.</p>
     <a href="api/index.php" class="btn btn-success">Open CRUD API</a>
-    <button class="btn btn-danger" onclick="logout()">Logout</button>
+    <a href="logout.php" class="btn btn-danger">Logout</a>
 </div>
 
-<script>
-function logout(){
-    sessionStorage.removeItem("login");
-    window.location.href = "login.php";
-}
-</script>
 
 <?php include("includes/footer.php"); ?>
