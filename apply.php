@@ -2,6 +2,12 @@
 $page = "apply";
 $position = $_GET['position'] ?? 'Unknown Position';
 include("includes/header.php");
+
+// Protect this page: require login
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
 // $jobs = $conn->query("SELECT title FROM jobs ORDER BY title ASC");
 ?>
 

@@ -35,7 +35,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-warning text-dark mb-3">Full Time</span>
                         <p>Responsible for food preparation, maintaining cleanliness, and supporting daily kitchen operations.</p>
-                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="Kitchen Staff">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-info text-dark mb-3">Part Time</span>
                         <p>Handle customer transactions, service excellence, and maintain smooth front-desk operations.</p>
-                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="Cashier">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-success text-light mb-3">Contract</span>
                         <p>Deliver orders quickly and safely using company vehicle. Good driving record required.</p>
-                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="Delivery Driver">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-danger text-light mb-3">Full Time</span>
                         <p>Lead store operations, manage staff, and maintain customer satisfaction to brand standards.</p>
-                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="Restaurant Supervisor">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                         <p class="text-muted mb-2">Location: Albuquerque, NM</p>
                         <span class="badge bg-secondary text-light mb-3">Full Time</span>
                         <p>Ensure restaurant cleanliness, equipment maintenance, and support facility needs.</p>
-                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="<?= $row['title']; ?>">Apply Now</button>
+                        <button class="btn btn-danger fw-bold w-100 apply-btn" style="background-color: #9f1000;" data-position="Cleaning & Maintenance">Apply Now</button>
                     </div>
                 </div>
             </div>
@@ -98,10 +98,11 @@
 </section>
 
 <script>
+// server-side login flag (set by PHP session)
+let logged = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+
 document.querySelectorAll('.apply-btn').forEach(btn => {
     btn.addEventListener('click', function(){
-
-        let logged = sessionStorage.getItem("login");
 
         if(!logged){
             alert("You must login before applying!");
