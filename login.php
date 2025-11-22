@@ -1,10 +1,12 @@
 <?php
-$page = "login";
-include("includes/header.php");
-
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once __DIR__ . '/koneksi/koneksi.php';
+
+    // make sure session is available before redirect
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
     // ensure users table exists
     $createSql = "CREATE TABLE IF NOT EXISTS users (
@@ -29,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password_hash'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $email;
-        
             header('Location: menu.php');
             exit;
         } else {
@@ -37,6 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+$page = "login";
+include("includes/header.php");
 ?>
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height:80vh;">
